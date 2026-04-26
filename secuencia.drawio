@@ -1,0 +1,59 @@
+sequenceDiagram
+    participant U as Usuario/Admin
+    participant I as Interfaz
+    participant S as Sistema
+    participant Inv as Inventario
+    participant C as Carrito
+
+    %% 1. LOGIN / REGISTRO
+    U->>I: Ingresar credenciales / Registrarse
+    I->>S: Enviar datos de login/registro
+    S->>S: Validar credenciales / Guardar usuario
+    S-->>I: Resultado (éxito o error)
+    I-->>U: Mostrar resultado
+
+    %% 2. COMPRA
+    U->>I: Seleccionar "Comprar"
+    I->>S: Solicitar productos
+    S->>Inv: Consultar productos y stock
+    Inv-->>S: Lista de productos
+    S-->>I: Mostrar productos
+    I-->>U: Mostrar productos
+
+    U->>I: Seleccionar producto
+    I->>S: Solicitar agregar producto
+    S->>Inv: Verificar stock
+
+    alt Sin stock
+        Inv-->>S: Stock = 0
+        S-->>I: "Sin stock"
+        I-->>U: Mostrar mensaje
+    else Con stock
+        Inv-->>S: Stock disponible
+        S->>Inv: Reducir stock
+        S->>C: Agregar producto al carrito
+        C-->>S: Confirmación
+        S-->>I: Producto agregado
+        I-->>U: Mostrar confirmación
+    end
+
+    %% 3. VER CARRITO
+    U->>I: Ver carrito
+    I->>C: Solicitar items
+    C-->>I: Lista de productos + total
+    I-->>U: Mostrar carrito
+
+    %% 4. FINALIZAR COMPRA
+    U->>I: Registrar dirección y finalizar compra
+    I->>S: Enviar datos (dirección, carrito)
+    S->>S: Procesar compra
+    S-->>I: Compra confirmada
+    I-->>U: Mostrar confirmación
+
+    %% 5. ADMIN
+    U->>I: Gestionar inventario (Admin)
+    I->>S: Enviar operación
+    S->>Inv: Agregar / Eliminar / Reponer productos
+    Inv-->>S: Operación exitosa
+    S-->>I: Resultado
+    I-->>U: Mostrar resultado

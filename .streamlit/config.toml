@@ -1,0 +1,16 @@
+[theme]
+
+# Color principal (botones, links, acentos)
+primaryColor = '#E75480'  # rosa elegante
+
+# Fondo principal
+backgroundColor = '#FFF5F7'  # rosado muy claro
+
+# Fondo de sidebar y widgets
+secondaryBackgroundColor = '#FDE2E4'  # nude rosado
+
+# Color del texto
+textColor = '#4A4A4A'  # gris oscuro elegante
+
+# Fuente
+font = "sans serif"

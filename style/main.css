@@ -1,0 +1,72 @@
+/* Fondo general */
+body {
+    background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Títulos principales */
+h1 {
+    color: #c71585;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Subtítulos */
+h2, h3 {
+    color: #db7093;
+}
+
+/* Texto normal */
+p {
+    color: #444;
+    font-size: 16px;
+}
+
+/* Botones */
+button {
+    background-color: #ff69b4 !important;
+    color: white !important;
+    border-radius: 10px !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #c71585 !important;
+}
+
+/* Inputs del formulario */
+input, textarea {
+    border-radius: 10px !important;
+    border: 1px solid #ffb6c1 !important;
+    padding: 10px !important;
+}
+
+/* Secciones */
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Links */
+a {
+    color: #ff1493;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Imagen */
+img {
+    border-radius: 15px;
+}
+
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
