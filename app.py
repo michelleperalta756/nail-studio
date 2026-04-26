@@ -45,7 +45,7 @@ with st.container():
     st.write("## Servicios que ofrecemos")
     image_column, text_column = st.columns((1,2))
     with image_column:
-        image = Image.open("imagenes/C:\Users\ejabb\OneDrive\Desktop\pagina\imagenes")
+        image = Image.open("imagenes/imagenpg1.jpeg")
         st.image(image, use_column_width=True)
     with text_column:
         st.subheader("Uñas Tradicionales")
